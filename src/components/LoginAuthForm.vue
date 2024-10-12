@@ -19,7 +19,7 @@
           <Label class="sr-only" for="email"> Email </Label>
           <Input
             id="password"
-            placeholder=""
+            placeholder="password"
             type="password"
             autocapitalize="none"
             autocomplete="password"
