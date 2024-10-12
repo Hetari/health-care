@@ -1,3 +1,8 @@
+<script setup lang="ts">
+  import UserAuthForm from '@/components/UserAuthForm.vue';
+  import { cn } from '@/lib/utils';
+</script>
+
 <template>
   <div class="md:hidden">
     <VPImage
@@ -17,7 +22,7 @@
       href="/examples/authentication"
       :class="
         cn(
-          buttonVariants({ variant: 'ghost' }),
+          // buttonVariants({ variant: 'ghost' }),
           'absolute right-4 top-4 md:right-8 md:top-8'
         )
       ">
@@ -83,11 +88,5 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-  import UserAuthForm from './components/UserAuthForm.vue';
-  import { cn } from '@/lib/utils';
-  import { buttonVariants } from '@/lib/registry/new-york/ui/button';
-</script>
 
 <style scoped></style>
