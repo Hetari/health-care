@@ -8,9 +8,9 @@
             id="email"
             placeholder="name@example.com"
             type="email"
-            auto-capitalize="none"
-            auto-complete="email"
-            auto-correct="off"
+            autocapitalize="none"
+            autocomplete="email"
+            autocorrect="off"
             :disabled="isLoading"
           />
         </div>
@@ -21,17 +21,15 @@
             id="password"
             placeholder=""
             type="password"
-            auto-capitalize="none"
-            auto-complete="password"
-            auto-correct="off"
+            autocapitalize="none"
+            autocomplete="password"
+            autocorrect="off"
+            current-password
             :disabled="isLoading"
           />
         </div>
 
-        <Button :disabled="isLoading">
-          <LucideSpinner v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
-          Sign In with Email
-        </Button>
+        <Button :disabled="isLoading"> Sign In with Email </Button>
       </div>
     </form>
     <!-- <div class="relative">

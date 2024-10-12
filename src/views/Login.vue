@@ -1,20 +1,6 @@
 <template>
-  <div class="hidden sm:block">
-    <VPImage
-      alt="Authentication"
-      width="1280"
-      height="1214"
-      class="block"
-      :image="{
-        dark: '/examples/authentication-dark.png',
-        light: '/examples/authentication-light.png',
-      }"
-    />
-    <!-- TODO: Replace with your image -->
-  </div>
-
   <div
-    class="container relative h-svh flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0"
+    class="container relative grid h-svh flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0"
   >
     <RouterLink
       :to="{ name: 'Login' }"
@@ -23,11 +9,14 @@
       Login
     </RouterLink>
     <!-- TODO: add register page -->
-
     <div
       class="bg-muted relative hidden h-full flex-col p-10 text-white dark:border-r lg:flex"
     >
-      <div class="absolute inset-0 bg-zinc-900" />
+      <img
+        class="absolute inset-0 size-full object-cover object-right brightness-[0.8]"
+        :src="bgImage"
+        alt="background"
+      />
       <div class="relative z-20 flex items-center text-lg font-medium">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -96,4 +85,24 @@
 
 <script setup lang="ts">
   import UserAuthForm from '@/components/UserAuthForm.vue';
+  import { bg1, bg2, bg3, bg4 } from '@/assets/images';
+  import { ref } from 'vue';
+  import { tryOnBeforeMount } from '@vueuse/core';
+
+  const bgImages = [bg1, bg2, bg3, bg4];
+  const bgImage = ref('');
+
+  const preloadImage = (src: string) => {
+    return new Promise<void>((resolve) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => resolve();
+    });
+  };
+
+  tryOnBeforeMount(async () => {
+    const selectedImage = bgImages[Math.floor(Math.random() * bgImages.length)];
+    await preloadImage(selectedImage);
+    bgImage.value = selectedImage;
+  });
 </script>
