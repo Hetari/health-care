@@ -6,6 +6,7 @@ import tailwind from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
+  base: '/health-care/',
   css: {
     postcss: {
       plugins: [tailwind(), autoprefixer()]

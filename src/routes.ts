@@ -10,19 +10,20 @@ function preloadImage(to, from, next) {
   const img = new Image();
   img.src = randomImage;
   img.onload = () => {
-    to.meta.bgImage = randomImage; // Store the preloaded image in route meta
-    next(); // Proceed to the route after image is loaded
+    to.meta.bgImage = randomImage;
+    next();
   };
 }
 
+const base = '/health-care';
 const routes = [
   {
-    path: '/',
+    path: `${base}/`,
     name: 'Home',
     component: Home,
   },
   {
-    path: '/login',
+    path: `${base}/login`,
     name: 'Login',
     component: Login,
     beforeEnter: [preloadImage],

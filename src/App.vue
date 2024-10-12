@@ -1,7 +1,7 @@
 <template>
   <nav v-show="!isRouteWithoutNav">
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/login">Login</RouterLink>
+    <RouterLink :to="{ name: 'Home' }">Home</RouterLink>
+    <RouterLink :to="{ name: 'Login' }">Login</RouterLink>
   </nav>
 
   <main>
