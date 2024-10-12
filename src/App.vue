@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
-  </div>
+  <nav>
+    <RouterLink to="/">Go to Home</RouterLink>
+  </nav>
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <script setup lang="ts"></script>
