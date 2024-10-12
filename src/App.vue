@@ -1,7 +1,11 @@
 <template>
-  <nav v-show="!isRouteWithoutNav">
-    <RouterLink :to="{ name: 'Home' }">Home</RouterLink>
-    <RouterLink :to="{ name: 'Login' }">Login</RouterLink>
+  <nav class="flex h-10 gap-10 px-10" v-show="!isRouteWithoutNav">
+    <router-link
+      v-for="route in $router.options.routes"
+      :key="route.path"
+      :to="{ name: route.name }"
+      >{{ route.name }}</router-link
+    >
   </nav>
 
   <main>
@@ -12,8 +16,10 @@
 <script setup lang="ts">
   import { computed } from 'vue';
   import { useRoute } from 'vue-router';
+  import { base } from './routes';
   const route = useRoute();
-  const routesWithoutNav = ['/login', '/register'];
+  const routesWithoutNav = ['/login', '/register'].map((r) => base + r);
+
   const isRouteWithoutNav = computed(() =>
     routesWithoutNav.includes(route.path),
   );

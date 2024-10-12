@@ -3,10 +3,9 @@
     class="container relative grid h-svh flex-col items-center justify-center lg:max-w-none lg:grid-cols-2 lg:px-0"
   >
     <p class="absolute right-4 top-4 md:right-8 md:top-8">
-      <span class="text-gray-500"> Don't have an account? </span>
-      <RouterLink :to="{ name: 'Register' }"> Register </RouterLink>
+      <span class="text-gray-500"> Do you have an account? </span>
+      <RouterLink :to="{ name: 'Login' }"> Login </RouterLink>
     </p>
-
     <div
       class="bg-muted relative hidden h-full flex-col p-10 text-white dark:border-r lg:flex"
     >
@@ -49,10 +48,15 @@
         class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]"
       >
         <div class="flex flex-col space-y-2 text-center">
-          <h1 class="text-2xl font-semibold tracking-tight">Login</h1>
+          <h1 class="text-2xl font-semibold tracking-tight">
+            Create an account
+          </h1>
+          <p class="text-muted-foreground text-sm">
+            Enter your email below to create your account
+          </p>
         </div>
 
-        <UserAuthForm />
+        <RegisterAuthForm />
 
         <p class="text-muted-foreground px-8 text-center text-sm">
           By clicking continue, you agree to our
@@ -77,7 +81,7 @@
 </template>
 
 <script setup lang="ts">
-  import UserAuthForm from '@/components/LoginAuthForm.vue';
+  import RegisterAuthForm from '@/components/RegisterAuthForm.vue';
   import { useRoute } from 'vue-router';
 
   const route = useRoute();

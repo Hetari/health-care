@@ -29,7 +29,7 @@
           />
         </div>
 
-        <Button :disabled="isLoading"> Sign In with Email </Button>
+        <Button :disabled="isLoading"> Create a new account </Button>
       </div>
     </form>
     <!-- <div class="relative">
