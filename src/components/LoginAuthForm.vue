@@ -16,7 +16,7 @@
         </div>
 
         <div class="grid gap-1">
-          <Label class="sr-only" for="email"> Email </Label>
+          <Label class="sr-only" for="password"> Password </Label>
           <Input
             id="password"
             placeholder="password"

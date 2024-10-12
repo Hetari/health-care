@@ -3,6 +3,19 @@
     <form @submit="onSubmit">
       <div class="grid gap-2">
         <div class="grid gap-1">
+          <Label class="sr-only" for="username"> Username </Label>
+          <Input
+            id="username"
+            placeholder="username"
+            type="text"
+            autocapitalize="none"
+            autocomplete="username"
+            autocorrect="off"
+            :disabled="isLoading"
+          />
+        </div>
+
+        <div class="grid gap-1">
           <Label class="sr-only" for="email"> Email </Label>
           <Input
             id="email"
@@ -16,13 +29,28 @@
         </div>
 
         <div class="grid gap-1">
-          <Label class="sr-only" for="email"> Email </Label>
+          <Label class="sr-only" for="password"> Password </Label>
           <Input
             id="password"
             placeholder="password"
             type="password"
             autocapitalize="none"
             autocomplete="password"
+            autocorrect="off"
+            current-password
+            :disabled="isLoading"
+          />
+        </div>
+
+        <div class="grid gap-1">
+          <Label class="sr-only" for="conform-password">
+            Conform Password
+          </Label>
+          <Input
+            id="conform-password"
+            placeholder="conform-password"
+            type="password"
+            autocapitalize="none"
             autocorrect="off"
             current-password
             :disabled="isLoading"
