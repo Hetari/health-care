@@ -14,7 +14,7 @@
     >
       <img
         class="absolute inset-0 size-full object-cover object-right brightness-[0.8]"
-        :src="bgImage"
+        :src="preloadedImage"
         alt="background"
       />
       <div class="relative z-20 flex items-center text-lg font-medium">
@@ -85,24 +85,8 @@
 
 <script setup lang="ts">
   import UserAuthForm from '@/components/UserAuthForm.vue';
-  import { bg1, bg2, bg3, bg4 } from '@/assets/images';
-  import { ref } from 'vue';
-  import { tryOnBeforeMount } from '@vueuse/core';
+  import { useRoute } from 'vue-router';
 
-  const bgImages = [bg1, bg2, bg3, bg4];
-  const bgImage = ref('');
-
-  const preloadImage = (src: string) => {
-    return new Promise<void>((resolve) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => resolve();
-    });
-  };
-
-  tryOnBeforeMount(async () => {
-    const selectedImage = bgImages[Math.floor(Math.random() * bgImages.length)];
-    await preloadImage(selectedImage);
-    bgImage.value = selectedImage;
-  });
+  const route = useRoute();
+  const preloadedImage = route.meta.bgImage as string;
 </script>
