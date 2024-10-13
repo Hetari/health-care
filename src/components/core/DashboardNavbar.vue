@@ -10,7 +10,7 @@
     DropdownMenuShortcut,
     DropdownMenuTrigger,
   } from '@/components/ui/dropdown-menu';
-  import { Breadcrumb } from '@/components/ui/breadcrumb';
+  import Breadcrumb from '@/components/ui/Breadcrumb.vue';
   import { LogOut, User, Bell, Sun, MoonStar, Menu } from 'lucide-vue-next';
   import { Button } from '@/components/ui/button';
   import { useAppStore } from '@/stores/app';
