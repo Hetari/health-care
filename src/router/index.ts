@@ -1,5 +1,5 @@
-import { bg1, bg2, bg3, bg4 } from '@/assets/images';
-const bgImages = [bg1, bg2, bg3, bg4];
+// import { bg1, bg2, bg3, bg4 } from '@/assets/images';
+
 import Home from '@/views/Home.vue';
 import Register from '@/views/Register.vue';
 import Login from '@/views/Login.vue';
@@ -27,7 +27,7 @@ const router = createRouter({
       path: `${base}/register`,
       name: 'Register',
       component: Register,
-      beforeEnter: [preloadImage],
+      // beforeEnter: [preloadImage],
       meta: {
         title: 'Register',
       } as RouteMeta & IRouteMeta,
@@ -36,7 +36,7 @@ const router = createRouter({
       path: `${base}/login`,
       name: 'Login',
       component: Login,
-      beforeEnter: [preloadImage],
+      // beforeEnter: [preloadImage],
       meta: {
         title: 'Login',
       } as RouteMeta & IRouteMeta,
@@ -99,17 +99,18 @@ router.beforeEach((loc) => {
   document.title = loc.meta.title as string;
 });
 
-function preloadImage(to, from, next) {
-  // if (window.innerWidth < 1024) {
-  //   return next();
-  // }
-  const randomImage = bgImages[Math.floor(Math.random() * bgImages.length)];
-  const img = new Image();
-  img.src = randomImage;
-  img.onload = () => {
-    to.meta.bgImage = randomImage;
-    next();
-  };
-}
+// function preloadImage(to, from, next) {
+//   // if (window.innerWidth < 1024) {
+//   //   return next();
+//   // }
+//   const bgImages = [bg1, bg2, bg3, bg4];
+//   const randomImage = bgImages[Math.floor(Math.random() * bgImages.length)];
+//   const img = new Image();
+//   img.src = randomImage;
+//   img.onload = () => {
+//     to.meta.bgImage = randomImage;
+//     next();
+//   };
+// }
 
 export default router;

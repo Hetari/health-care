@@ -4,8 +4,7 @@ import { CalendarRoot, type CalendarRootEmits, type CalendarRootProps, useForwar
 import { CalendarCell, CalendarCellTrigger, CalendarGrid, CalendarGridBody, CalendarGridHead, CalendarGridRow, CalendarHeadCell, CalendarHeader, CalendarHeading, CalendarNextButton, CalendarPrevButton } from '.'
 import { cn } from '@/lib/utils'
 
-const props = defineProps<CalendarRootProps & { class?: HTMLAttributes['class'] }>()
-
+const props = defineProps<CalendarRootProps & { class?: HTMLAttributes['class'] }>() 
 const emits = defineEmits<CalendarRootEmits>()
 
 const delegatedProps = computed(() => {

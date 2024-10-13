@@ -24,7 +24,7 @@
 
 <template>
   <nav
-    class="bg-background/80 border-border fixed top-0 z-40 flex h-[64px] items-center justify-between border-b border-b-[1px] px-4 backdrop-blur-lg"
+    class="bg-background/80 border-border fixed top-0 z-40 flex h-[64px] items-center justify-between border-b px-4 backdrop-blur-lg"
     :style="{ width: store.navWidth }"
   >
     <div class="hidden w-24 lg:block">
@@ -45,6 +45,7 @@
       <Button variant="outline" class="h-8 w-8 border-0 p-[6px]">
         <Bell />
       </Button>
+
       <Button
         variant="outline"
         class="ml-2 h-8 w-8 border-0 p-[6px]"
@@ -61,14 +62,15 @@
             class="flex w-full max-w-[200px] items-center justify-start border-0"
           >
             <Avatar class="h-8 w-8">
-              <AvatarImage src="https://github.com/radix-vue.png"></AvatarImage>
+              <AvatarImage src="https://github.com/hetari.png"></AvatarImage>
             </Avatar>
             <span
               class="ml-2 hidden flex-col items-start justify-start md:flex"
             >
-              <p class="mb-0">John Doe</p>
+              <p class="mb-0">Ebraheem Alhetari</p>
+
               <small class="text-xs font-light text-slate-400"
-                >john_doe@email.com</small
+                >hetari4all@email.com</small
               >
             </span>
           </Button>

@@ -14,7 +14,7 @@
     >
       <img
         class="absolute inset-0 size-full object-cover object-right brightness-[0.8]"
-        :src="preloadedImage"
+        :src="img"
         alt="background"
       />
       <div
@@ -86,7 +86,7 @@
 
 <script setup lang="ts">
   import UserAuthForm from '@/components/LoginAuthForm.vue';
-  import { useRoute } from 'vue-router';
-  const route = useRoute();
-  const preloadedImage = route.meta.bgImage as string;
+  import { ref } from 'vue';
+  import { bg1 } from '@/assets/images';
+  const img = ref(bg1);
 </script>

@@ -22,12 +22,7 @@
 
 <template>
   <div>
-    <page-header title="Dashboard">
-      <div class="flex items-center space-x-2">
-        <DateRangePicker />
-        <Button>Download</Button>
-      </div>
-    </page-header>
+    <page-header title="Dashboard" />
 
     <Tabs default-value="overview" class="space-y-4">
       <TabsList>
