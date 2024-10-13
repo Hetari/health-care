@@ -9,13 +9,21 @@ export default defineConfig({
   base: '/health-care/',
   css: {
     postcss: {
-      plugins: [tailwind(), autoprefixer()]
-    }
+      plugins: [tailwind(), autoprefixer()],
+    },
   },
-  plugins: [vue()],
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => ['ScrollBar', 'ScrollArea'].includes(tag),
+        },
+      },
+    }),
+  ],
   resolve: {
     alias: {
-      '@': '/src'
-    }
-  }
+      '@': '/src',
+    },
+  },
 });
