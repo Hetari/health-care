@@ -7,11 +7,12 @@
         The page you're trying to access <br />
         could not be found
       </p>
+      <!-- 
       <RouterLink to="/dashboard/home">
-        <Button class="mt-4" variant="outline" prepend-icon="ArrowLeft"
-          >Back to Home</Button
-        >
-      </RouterLink>
+      </RouterLink> -->
+      <Button class="mt-4" variant="outline" prepend-icon="ArrowLeft"
+        >Back to Home</Button
+      >
     </div>
   </div>
 </template>

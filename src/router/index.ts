@@ -6,9 +6,10 @@ import {
   RouteMeta,
   RouteRecordRaw,
 } from 'vue-router';
-import Home from './views/Home.vue';
-import Register from './views/Register.vue';
-import Login from './views/Login.vue';
+import Home from '@/views/Home.vue';
+import Register from '@/views/Register.vue';
+import Login from '@/views/Login.vue';
+import NotFound from '@/views/NotFound.vue';
 
 interface IRouteMeta {
   title: string;
@@ -42,23 +43,46 @@ const routes: RouteRecordRaw[] = [
       title: 'Login',
     } as RouteMeta & IRouteMeta,
   },
-  // {
-  //   path: `${base}/dashboard`,
-  //   name: 'Dashboard',
-  //   component: () => import('@/views/dashboard/index.vue'),
-  //   meta: {
-  //     title: 'Home',
-  //   } as RouteMeta & IRouteMeta,
-  // },
-  // 404 page
-  // {
-  //   path: '/:pathMatch(.*)',
-  //   name: 'not-found',
-  //   component: () => import('@/views/404.vue'),
-  //   meta: {
-  //     title: 'Page Not Found',
-  //   } as RouteMeta & IRouteMeta,
-  // },
+  {
+    path: `${base}/dashboard`,
+    name: 'Dashboard',
+    component: () => import('@/views/dashboard/examples/Home.vue'),
+    meta: {
+      title: 'Dashboard',
+    } as RouteMeta & IRouteMeta,
+  },
+  {
+    path: `${base}/dashboard/task`,
+    name: 'DashboardTasksIndex',
+    component: () => import('@/views/dashboard/examples/tasks/Index.vue'),
+    meta: {
+      title: 'Tasks',
+    } as RouteMeta & IRouteMeta,
+  },
+  {
+    path: `${base}/dashboard/user`,
+    name: 'DashboardUserIndex',
+    component: () => import('@/views/dashboard/examples/user/Index.vue'),
+    meta: {
+      title: 'User',
+    } as RouteMeta & IRouteMeta,
+  },
+  {
+    path: `${base}/dashboard/settings`,
+    name: 'DashboardSettingsIndex',
+    component: () => import('@/views/dashboard/examples/settings/Index.vue'),
+    meta: {
+      title: 'Settings',
+    } as RouteMeta & IRouteMeta,
+  },
+  {
+    path: `${base}/:pathMatch(.*)*`,
+    name: 'not-found',
+    component: NotFound,
+    meta: {
+      title: 'Page Not Found',
+    } as RouteMeta & IRouteMeta,
+  },
 ];
 
 const router = createRouter({

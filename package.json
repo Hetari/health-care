@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/vue-table": "^8.20.5",
     "@unovis/ts": "^1.4.3-beta.0",
     "@unovis/vue": "^1.4.3-beta.0",
     "@vee-validate/zod": "^4.13.2",
@@ -21,8 +22,10 @@
     "radix-vue": "^1.9.7",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7",
+    "v-calendar": "^3.1.2",
     "vee-validate": "^4.13.2",
     "vue": "^3.5.10",
+    "vue-feather": "^2.0.0",
     "vue-router": "^4.4.5",
     "zod": "^3.23.8"
   },
