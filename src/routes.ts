@@ -1,6 +1,11 @@
 import { bg1, bg2, bg3, bg4 } from '@/assets/images';
 const bgImages = [bg1, bg2, bg3, bg4];
-import { createWebHistory, createRouter, RouteMeta } from 'vue-router';
+import {
+  createWebHistory,
+  createRouter,
+  RouteMeta,
+  RouteRecordRaw,
+} from 'vue-router';
 import Home from './views/Home.vue';
 import Register from './views/Register.vue';
 import Login from './views/Login.vue';
@@ -10,7 +15,7 @@ interface IRouteMeta {
 }
 
 export const base = '/health-care';
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: `${base}/`,
     name: 'Home',
@@ -35,6 +40,14 @@ const routes = [
     beforeEnter: [preloadImage],
     meta: {
       title: 'Login',
+    } as RouteMeta & IRouteMeta,
+  },
+  {
+    path: `${base}/dashboard`,
+    name: 'Dashboard',
+    component: () => import('@/views/dashboard/index.vue'),
+    meta: {
+      title: 'Home',
     } as RouteMeta & IRouteMeta,
   },
   // 404 page
