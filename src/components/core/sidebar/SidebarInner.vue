@@ -64,7 +64,7 @@
                     <Icon name="Boxes" />
                   </span>
                 </span>
-                Dashcn
+                Health Care
               </h2>
             </transition>
             <Button

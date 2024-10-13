@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import DashboardLayoutVue from '@/layout/dashboard.vue';
-
   import {
     Card,
     CardHeader,

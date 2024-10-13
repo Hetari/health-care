@@ -21,22 +21,22 @@ export const APP_MENU: Record<
         path: 'home',
       },
       {
-        title: 'Tasks',
-        icon: 'ClipboardCheck',
-        path: 'task',
-        description: 'Manage Tasks',
+        title: 'Patient',
+        icon: 'Users',
+        path: 'patient',
+        description: 'Manage Patient',
       },
     ],
   },
   settings: {
     name: 'General',
     routes: [
-      {
-        path: 'user',
-        title: 'User',
-        icon: 'Users',
-        description: 'Manage User',
-      },
+      // {
+      //   path: 'user',
+      //   title: 'User',
+      //   icon: 'Users',
+      //   description: 'Manage User',
+      // },
       {
         path: 'settings',
         title: 'Settings',
