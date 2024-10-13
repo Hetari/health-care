@@ -42,23 +42,23 @@ const routes: RouteRecordRaw[] = [
       title: 'Login',
     } as RouteMeta & IRouteMeta,
   },
-  {
-    path: `${base}/dashboard`,
-    name: 'Dashboard',
-    component: () => import('@/views/dashboard/index.vue'),
-    meta: {
-      title: 'Home',
-    } as RouteMeta & IRouteMeta,
-  },
+  // {
+  //   path: `${base}/dashboard`,
+  //   name: 'Dashboard',
+  //   component: () => import('@/views/dashboard/index.vue'),
+  //   meta: {
+  //     title: 'Home',
+  //   } as RouteMeta & IRouteMeta,
+  // },
   // 404 page
-  {
-    path: '/:pathMatch(.*)',
-    name: 'not-found',
-    component: () => import('@/views/404.vue'),
-    meta: {
-      title: 'Page Not Found',
-    } as RouteMeta & IRouteMeta,
-  },
+  // {
+  //   path: '/:pathMatch(.*)',
+  //   name: 'not-found',
+  //   component: () => import('@/views/404.vue'),
+  //   meta: {
+  //     title: 'Page Not Found',
+  //   } as RouteMeta & IRouteMeta,
+  // },
 ];
 
 const router = createRouter({
