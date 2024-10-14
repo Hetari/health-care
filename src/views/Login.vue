@@ -11,6 +11,12 @@
 
     <template v-slot:form>
       <LoginAuthForm />
+      <p class="text-center text-sm text-slate-500">
+        Forgot your password?
+        <RouterLink class="text-primary" :to="{ name: 'ForgotPassword' }">
+          Reset it
+        </RouterLink>
+      </p>
     </template>
   </AuthLayout>
 </template>

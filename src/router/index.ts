@@ -42,6 +42,14 @@ const router = createRouter({
       } as RouteMeta & IRouteMeta,
     },
     {
+      path: `${base}/forgot-password`,
+      name: 'ForgotPassword',
+      meta: {
+        title: 'Forgot Password',
+      } as RouteMeta & IRouteMeta,
+      component: () => import('@/views/ForgotPassword.vue'),
+    },
+    {
       path: `${base}/dashboard`,
       name: 'Dashboard',
       component: DashboardLayoutVue,
