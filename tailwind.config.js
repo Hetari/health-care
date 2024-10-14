@@ -11,10 +11,6 @@ module.exports = {
   ],
   prefix: '',
   theme: {
-    screens: {
-      md: '1024px',
-      lg: '1025px',
-    },
     container: {
       center: true,
       padding: '2rem',

@@ -21,6 +21,12 @@
     priority: string;
     doctor: string;
     lastVisit: string;
+    room: string;
+    contact: string;
+    medications: string[];
+    prescriptions: string[];
+    nextAppointment: string;
+    allergies: string;
   }
 
   const tagVariants: Record<
@@ -36,6 +42,7 @@
 
   const patients = ref(data);
   const columns: ColumnDef<IPatient>[] = [
+    // Checkbox for selecting all rows
     {
       accessorKey: 'id',
       header: ({ table }) =>
@@ -55,11 +62,15 @@
           enableHiding: false,
         }),
     },
+
+    // Column for patient ID
     {
       accessorKey: 'id',
       header: 'ID',
       enableSorting: false,
     },
+
+    // Column for patient name with custom header
     {
       accessorKey: 'name',
       header: ({ column }) =>
@@ -72,43 +83,50 @@
         }),
       cell: ({ row }) => h('span', { class: 'font-medium' }, row.original.name),
     },
+
+    // Column for patient age
     {
       accessorKey: 'age',
       header: 'Age',
     },
+
+    // Column for patient gender
     {
       accessorKey: 'gender',
       header: 'Gender',
     },
+
+    // Column for patient illness
     {
       accessorKey: 'ill',
       header: 'Illness',
     },
+
+    // Column for doctor
     {
       accessorKey: 'doctor',
       header: 'Doctor',
     },
+
+    // Column for last visit date
     {
       accessorKey: 'lastVisit',
       header: 'Last Visit',
     },
+
+    // Column for patient status
     {
       accessorKey: 'status',
       header: 'Status',
     },
+
+    // Column for patient label
     {
       accessorKey: 'label',
       header: 'Label',
-      // cell: ({ row }) =>
-      //   h(
-      //     Badge,
-      //     {
-      //       variant: tagVariants[row.original.label],
-      //       class: 'mr-2',
-      //     },
-      //     () => row.original.label,
-      //   ),
     },
+
+    // Column for priority with custom Badge
     {
       accessorKey: 'priority',
       header: 'Priority',
@@ -122,10 +140,11 @@
           () => row.original.priority,
         ),
     },
+
+    // Column for actions (View button)
     {
       id: 'actions',
       header: 'Actions',
-
       cell: ({ row }) =>
         h(
           'button',
