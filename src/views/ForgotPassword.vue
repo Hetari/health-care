@@ -24,7 +24,7 @@
       <!-- Reset Code Input -->
       <div v-if="showResetCodeInput && !showNewPasswordInput">
         <label for="resetCode" class="block text-sm font-medium text-gray-700"
-          >Reset Code</label
+          >Reset Code (hint: it's 123)</label
         >
         <input
           v-model="resetCode"

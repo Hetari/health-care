@@ -22,7 +22,23 @@
       { "id": 2, "date": "2024-10-01", "details": "Added Warfarin 5mg" }
     ],
     "allergies": "None",
-    "nextAppointment": "2024-11-01"
+    "nextAppointment": "2024-11-01",
+    "healthRecords": [
+      {
+        "id": 1,
+        "date": "2024-01-10",
+        "testName": "Blood Pressure Test",
+        "result": "130/85",
+        "notes": "Normal range."
+      },
+      {
+        "id": 2,
+        "date": "2023-12-20",
+        "testName": "Cholesterol Test",
+        "result": "200 mg/dL",
+        "notes": "Slightly elevated."
+      }
+    ]
   },
   {
     "id": "PATIENT-9321",
@@ -47,7 +63,23 @@
       { "id": 2, "date": "2024-09-10", "details": "Started Fluticasone for daily use" }
     ],
     "allergies": "Peanuts",
-    "nextAppointment": "2024-10-15"
+    "nextAppointment": "2024-10-15",
+    "healthRecords": [
+      {
+        "id": 3,
+        "date": "2023-11-15",
+        "testName": "Complete Blood Count (CBC)",
+        "result": "Normal",
+        "notes": "No issues detected."
+      },
+      {
+        "id": 4,
+        "date": "2023-10-25",
+        "testName": "Liver Function Test",
+        "result": "Slightly elevated ALT levels",
+        "notes": "Monitor liver function regularly."
+      }
+    ]
   },
   {
     "id": "PATIENT-6710",
@@ -72,6 +104,22 @@
       { "id": 2, "date": "2024-10-07", "details": "Added Glipizide for better glucose control" }
     ],
     "allergies": "Sulfa drugs",
-    "nextAppointment": "2024-10-29"
+    "nextAppointment": "2024-10-29",
+    "healthRecords": [
+    {
+      "id": 1,
+      "date": "2024-01-10",
+      "testName": "Blood Pressure Test",
+      "result": "130/85",
+      "notes": "Normal range."
+    },
+    {
+      "id": 2,
+      "date": "2023-12-20",
+      "testName": "Cholesterol Test",
+      "result": "200 mg/dL",
+      "notes": "Slightly elevated."
+    }
+  ]
   }
 ]
