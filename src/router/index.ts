@@ -43,6 +43,7 @@ const router = createRouter({
     },
     {
       path: `${base}/dashboard`,
+      name: 'Dashboard',
       component: DashboardLayoutVue,
       redirect: `${base}/dashboard/home`,
       meta: {
@@ -54,7 +55,7 @@ const router = createRouter({
           name: 'home',
           component: () => import('@/views/dashboard/examples/Home.vue'),
           meta: {
-            title: 'Home',
+            title: 'DashboardHome',
           } as RouteMeta & IRouteMeta,
         },
         {
@@ -63,7 +64,16 @@ const router = createRouter({
           component: () =>
             import('@/views/dashboard/examples/patient/Index.vue'),
           meta: {
-            title: 'Tasks',
+            title: 'Patients',
+          } as RouteMeta & IRouteMeta,
+        },
+        {
+          path: 'patient/:patientId',
+          name: 'patient_show',
+          component: () =>
+            import('@/views/dashboard/examples/patient/View.vue'),
+          meta: {
+            title: 'Patient',
           } as RouteMeta & IRouteMeta,
         },
         {

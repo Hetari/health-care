@@ -7,24 +7,35 @@
   import { Badge } from '@/components/ui/badge';
 
   // @ts-ignore
-  import data from '@/assets/tasks.json';
+  import data from '@/assets/data.json';
+  import router from '@/router';
 
-  interface IData {
+  interface IPatient {
     id: string;
-    title: string;
+    name: string;
+    age: number;
+    gender: string;
+    ill: string;
     status: string;
     label: string;
     priority: string;
+    doctor: string;
+    lastVisit: string;
   }
 
-  const tagVariants: Record<string, string> = {
-    bug: 'danger',
-    documentation: 'success',
-    feature: 'warning',
+  const tagVariants: Record<
+    string,
+    'secondary' | 'default' | 'destructive' | 'outline'
+  > = {
+    urgent: 'default',
+    routine: 'secondary',
+    high: 'destructive',
+    medium: 'default',
+    low: 'secondary',
   };
 
-  const tasks = ref(data);
-  const columns: ColumnDef<IData>[] = [
+  const patients = ref(data);
+  const columns: ColumnDef<IPatient>[] = [
     {
       accessorKey: 'id',
       header: ({ table }) =>
@@ -50,57 +61,91 @@
       enableSorting: false,
     },
     {
-      accessorKey: 'title',
+      accessorKey: 'name',
       header: ({ column }) =>
         h(DataTableHeader, {
-          column: column as Column<IData>,
-          title: 'Title',
+          column: column as Column<IPatient>,
+          title: 'Patient Name',
           'onUpdate:sort': (val) => {
             console.log(val);
           },
         }),
-      cell: ({ row }) =>
-        h(
-          'div',
-          {
-            class: 'max-w-[500px] truncate flex items-center',
-          },
-          [
-            h(
-              Badge,
-              {
-                variant: tagVariants[row.original.label] as any,
-                class: 'mr-2',
-              },
-              () => row.original.label,
-            ),
-            h(
-              'span',
-              { class: 'max-w-[500px] truncate font-medium' },
-              row.original.title,
-            ),
-          ],
-        ),
+      cell: ({ row }) => h('span', { class: 'font-medium' }, row.original.name),
+    },
+    {
+      accessorKey: 'age',
+      header: 'Age',
+    },
+    {
+      accessorKey: 'gender',
+      header: 'Gender',
+    },
+    {
+      accessorKey: 'ill',
+      header: 'Illness',
+    },
+    {
+      accessorKey: 'doctor',
+      header: 'Doctor',
+    },
+    {
+      accessorKey: 'lastVisit',
+      header: 'Last Visit',
     },
     {
       accessorKey: 'status',
       header: 'Status',
-      enableSorting: false,
+    },
+    {
+      accessorKey: 'label',
+      header: 'Label',
+      // cell: ({ row }) =>
+      //   h(
+      //     Badge,
+      //     {
+      //       variant: tagVariants[row.original.label],
+      //       class: 'mr-2',
+      //     },
+      //     () => row.original.label,
+      //   ),
     },
     {
       accessorKey: 'priority',
       header: 'Priority',
-      enableSorting: false,
+      cell: ({ row }) =>
+        h(
+          Badge,
+          {
+            variant: tagVariants[row.original.priority],
+            class: 'mr-2',
+          },
+          () => row.original.priority,
+        ),
     },
     {
       id: 'actions',
+      header: 'Actions',
+
+      cell: ({ row }) =>
+        h(
+          'button',
+          {
+            class: 'btn',
+            onClick: () =>
+              router.push({
+                name: 'patient_show',
+                params: { patientId: row.original.id },
+              }),
+          },
+          'View',
+        ),
     },
   ];
 </script>
 
 <template>
   <div>
-    <page-header title="Tasks"></page-header>
-    <DataTable :columns="columns" :data="tasks"></DataTable>
+    <page-header title="Patients"></page-header>
+    <DataTable :columns="columns" :data="patients"></DataTable>
   </div>
 </template>
