@@ -67,6 +67,14 @@ const router = createRouter({
           component: () => import('@/views/Notifications.vue'),
         },
         {
+          path: 'renewal-prescription',
+          name: 'RenewalPrescription',
+          meta: {
+            title: 'RenewalPrescription',
+          } as RouteMeta & IRouteMeta,
+          component: () => import('@/views/RequestRenewalPrescription.vue'),
+        },
+        {
           path: 'home',
           name: 'home',
           component: () => import('@/views/dashboard/examples/Home.vue'),
