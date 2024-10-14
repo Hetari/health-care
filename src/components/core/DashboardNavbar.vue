@@ -14,6 +14,7 @@
   import { LogOut, User, Bell, Sun, MoonStar, Menu } from 'lucide-vue-next';
   import { Button } from '@/components/ui/button';
   import { useAppStore } from '@/stores/app';
+  import router from '@/router';
 
   const store = useAppStore();
 
@@ -24,7 +25,7 @@
 
 <template>
   <nav
-    class="bg-background/80 border-border fixed top-0 z-40 flex h-[64px] items-center justify-between border-b px-4 backdrop-blur-lg"
+    class="fixed top-0 z-40 flex h-[64px] items-center justify-between border-b border-border bg-background/80 px-4 backdrop-blur-lg"
     :style="{ width: store.navWidth }"
   >
     <div class="hidden w-24 lg:block">
@@ -42,7 +43,11 @@
       <Menu class="text-black transition-all duration-500" />
     </Button>
     <div class="flex items-center">
-      <Button variant="outline" class="h-8 w-8 border-0 p-[6px]">
+      <Button
+        @click.prevent="router.push({ name: 'Notifications' })"
+        variant="outline"
+        class="h-8 w-8 border-0 p-[6px]"
+      >
         <Bell />
       </Button>
 

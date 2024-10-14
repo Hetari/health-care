@@ -59,6 +59,14 @@ const router = createRouter({
       },
       children: [
         {
+          path: 'notifications',
+          name: 'Notifications',
+          meta: {
+            title: 'Notifications',
+          } as RouteMeta & IRouteMeta,
+          component: () => import('@/views/Notifications.vue'),
+        },
+        {
           path: 'home',
           name: 'home',
           component: () => import('@/views/dashboard/examples/Home.vue'),
