@@ -72,7 +72,10 @@ const router = createRouter({
           meta: {
             title: 'RenewalPrescription',
           } as RouteMeta & IRouteMeta,
-          component: () => import('@/views/RequestRenewalPrescription.vue'),
+          component: () =>
+            import(
+              '@/views/dashboard/examples/patient/RequestRenewalPrescription.vue'
+            ),
         },
         {
           path: 'home',
