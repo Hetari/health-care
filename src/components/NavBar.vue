@@ -4,7 +4,7 @@
     class="sticky top-0 z-50 overflow-x-clip lg:relative"
   >
     <div
-      class="mx-auto flex w-full max-w-[1440px] justify-between justify-items-center px-4 py-6"
+      class="mx-auto flex w-full max-w-[1440px] justify-between justify-items-center py-6"
     >
       <div class="relative top-3 flex items-start text-lg">
         <RouterLink class="flex font-semibold" :to="{ name: 'Home' }"
@@ -52,9 +52,6 @@
       </div>
     </div>
   </div>
-
-  <div class="h-svh"></div>
-  <div class="h-svh"></div>
 </template>
 
 <script setup lang="ts">
@@ -64,7 +61,7 @@
 
   const links = ref([
     { name: 'Home', label: 'Home' },
-    { name: 'Home', label: 'About' },
+    { name: 'Home', label: 'About me' },
     { name: 'Home', label: 'Pages' },
   ]);
 
@@ -90,8 +87,7 @@
       item.addEventListener('mouseleave', () => {
         gsap.to(navPointer, {
           opacity: 0,
-          ease: 'power2.out',
-          //   duration: 0.3,
+          ease: 'power4.out',
         });
       });
     });

@@ -71,7 +71,7 @@ body {
 }
 
 body {
-  background-color: #fbfbfd;
+  background-color: #f5f5f5 !important;
 }
 body.dark {
   background-color: #151517;
