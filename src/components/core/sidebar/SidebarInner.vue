@@ -44,7 +44,7 @@
 
 <template>
   <div
-    class="sidebar duration-400 bg-background fixed h-screen overflow-hidden border-r-[1px] transition-all"
+    class="sidebar duration-400 fixed h-screen overflow-hidden border-r-[1px] bg-background transition-all"
     :style="{ width: `${store.wrapperWidth}px` }"
   >
     <div class="relative flex h-full flex-col justify-between">
@@ -69,7 +69,7 @@
             </transition>
             <Button
               variant="outline"
-              class="h-8 w-8 p-[6px] transition-all duration-200"
+              class="size-8 p-[6px] transition-all duration-200"
               :class="
                 store.sidebarExpanded ? 'bg-transparent' : 'dark:bg-white'
               "
@@ -216,7 +216,7 @@
         class="duration-400 border-t-[1px] py-4 transition-all"
         :class="store.sidebarExpanded ? 'opacity-100' : 'opacity-0'"
       >
-        <p class="text-foreground/50 text-center text-xs">
+        <p class="text-center text-xs text-foreground/50">
           &copy; {{ new Date().getFullYear() }} Hetari - All rights reserved.
         </p>
       </div>

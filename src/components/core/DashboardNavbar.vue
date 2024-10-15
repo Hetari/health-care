@@ -36,24 +36,24 @@
     </div>
     <Button
       variant="outline"
-      class="block h-8 w-8 p-[6px] transition-all duration-200 lg:hidden"
-      :class="store.sidebarExpanded ? 'bg-transparent' : 'dark:bg-white'"
+      class="flex size-8 p-[6px] transition-all duration-200 lg:hidden"
+      :class="store.sidebarExpanded ? 'bg-transparent' : 'dark:border-white/30'"
       @click="store.toggleSidebar()"
     >
-      <Menu class="text-black transition-all duration-500" />
+      <Menu class="text-black transition-all duration-500 dark:text-white" />
     </Button>
     <div class="flex items-center">
       <Button
         @click.prevent="router.push({ name: 'Notifications' })"
         variant="outline"
-        class="h-8 w-8 border-0 p-[6px]"
+        class="size-8 border-0 p-[6px]"
       >
         <Bell />
       </Button>
 
       <Button
         variant="outline"
-        class="ml-2 h-8 w-8 border-0 p-[6px]"
+        class="ml-2 size-8 border-0 p-[6px]"
         @click="toggleMode"
       >
         <Sun v-if="store.isDark" />
@@ -66,7 +66,7 @@
             variant="outline"
             class="flex w-full max-w-[200px] items-center justify-start border-0"
           >
-            <Avatar class="h-8 w-8">
+            <Avatar class="size-8">
               <AvatarImage src="https://github.com/hetari.png"></AvatarImage>
             </Avatar>
             <span
