@@ -17,6 +17,12 @@
       management platform.
     </p>
 
+    <!-- <div
+        class="flex w-fit select-none items-center rounded-full border border-black/50 px-5 py-1"
+      >
+        <Wrench class="mr-2 size-4 text-black/70" />
+        Created by Ebraheem Alhetari
+      </div> -->
     <!-- Call to Action -->
     <div>
       <button
@@ -31,7 +37,6 @@
 </template>
 
 <script setup lang="ts">
-  import { Wrench } from 'lucide-vue-next';
   import gsap from 'gsap';
   import { onMounted } from 'vue';
 
