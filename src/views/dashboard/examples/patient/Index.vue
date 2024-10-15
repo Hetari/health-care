@@ -173,7 +173,11 @@
         variant="outline"
         >Renewal Prescription</Button
       >
-      <Button variant="default">Add new patient</Button>
+      <Button
+        @click.prevent="router.push({ name: 'patient_add' })"
+        variant="default"
+        >Add new patient</Button
+      >
     </div>
 
     <DataTable :columns="columns" :data="patients"></DataTable>

@@ -87,6 +87,14 @@ const router = createRouter({
           } as RouteMeta & IRouteMeta,
         },
         {
+          path: 'add-patient',
+          name: 'patient_add',
+          component: () => import('@/views/dashboard/examples/patient/Add.vue'),
+          meta: {
+            title: 'Add Patient',
+          } as RouteMeta & IRouteMeta,
+        },
+        {
           path: 'patient/:patientId',
           name: 'patient_show',
           component: () =>
