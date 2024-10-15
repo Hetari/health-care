@@ -59,14 +59,6 @@ const router = createRouter({
       },
       children: [
         {
-          path: 'notifications',
-          name: 'Notifications',
-          meta: {
-            title: 'Notifications',
-          } as RouteMeta & IRouteMeta,
-          component: () => import('@/views/Notifications.vue'),
-        },
-        {
           path: 'renewal-prescription',
           name: 'RenewalPrescription',
           meta: {

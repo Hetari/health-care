@@ -43,11 +43,7 @@
       <Menu class="text-black transition-all duration-500 dark:text-white" />
     </Button>
     <div class="flex items-center">
-      <Button
-        @click.prevent="router.push({ name: 'Notifications' })"
-        variant="outline"
-        class="size-8 border-0 p-[6px]"
-      >
+      <Button variant="outline" class="size-8 border-0 p-[6px]">
         <Bell />
       </Button>
 

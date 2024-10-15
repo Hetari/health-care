@@ -5,6 +5,7 @@
   import DataTableHeader from '@/components/ui/data-table/DataTableHeader.vue';
   import type { Column } from '@tanstack/vue-table';
   import { Badge } from '@/components/ui/badge';
+  import { Button } from '@/components/ui/button';
 
   // @ts-ignore
   import data from '@/assets/data.json';
@@ -165,6 +166,16 @@
 <template>
   <div>
     <page-header title="Patients"></page-header>
+
+    <div class="mb-4 flex justify-end gap-4">
+      <Button
+        @click.prevent="router.push({ name: 'RenewalPrescription' })"
+        variant="outline"
+        >Renewal Prescription</Button
+      >
+      <Button variant="default">Add new patient</Button>
+    </div>
+
     <DataTable :columns="columns" :data="patients"></DataTable>
   </div>
 </template>
