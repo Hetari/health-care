@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{c as r,g as n,H as a,h as s,o as c,I as _}from"./index-BZv_jbEZ.js";const d={};function l(p,e){const o=s("page-header");return c(),r("div",null,[n(o,null,{default:a(()=>e[0]||(e[0]=[_("User")])),_:1})])}const i=t(d,[["render",l]]);export{i as default};
