@@ -22,14 +22,14 @@
   <NavBar class="px-[7.5%] sm:px-[10%] lg:px-[15%] lg:py-0" />
   <main class="px-[7.5%] sm:px-[10%] lg:px-[15%] lg:py-0">
     <Hero />
-    <AboutUs />
+    <Pages />
   </main>
 </template>
 
 <script setup lang="ts">
   import NavBar from '@/components/NavBar.vue';
   import Hero from '@/sections/Hero.vue';
-  import AboutUs from '@/sections/AboutUs.vue';
+  import Pages from '@/sections/Pages.vue';
   import { ref } from 'vue';
   // import gsap from 'gsap';
 

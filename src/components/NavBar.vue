@@ -27,12 +27,12 @@
               v-for="(link, index) in links"
               :key="index"
             >
-              <RouterLink
+              <a
                 class="flex items-start px-7 py-3 text-white mix-blend-difference"
-                :to="{ name: link.name }"
+                :href="link.name"
               >
                 {{ link.label }}
-              </RouterLink>
+              </a>
             </li>
 
             <li
@@ -60,9 +60,9 @@
   import { onMounted, ref } from 'vue';
 
   const links = ref([
-    { name: 'Home', label: 'Home' },
-    { name: 'Home', label: 'About me' },
-    { name: 'Home', label: 'Pages' },
+    { name: '#app', label: 'Home' },
+    // { name: 'Home', label: 'About me' },
+    { name: '#pages', label: 'Pages' },
   ]);
 
   onMounted(() => {
