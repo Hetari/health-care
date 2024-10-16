@@ -71,10 +71,10 @@ const router = createRouter({
         },
         {
           path: 'home',
-          name: 'home',
+          name: 'DashboardHome',
           component: () => import('@/views/dashboard/examples/Home.vue'),
           meta: {
-            title: 'DashboardHome',
+            title: 'Dashboard Home',
           } as RouteMeta & IRouteMeta,
         },
         {
