@@ -22,7 +22,7 @@
   <NavBar class="px-[7.5%] sm:px-[10%] lg:px-[15%] lg:py-0" />
   <main class="px-[7.5%] sm:px-[10%] lg:px-[15%] lg:py-0">
     <Hero />
-    <Pages />
+    <!-- <Pages /> -->
   </main>
 </template>
 
